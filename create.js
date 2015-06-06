@@ -2,7 +2,7 @@ var Create = function(){
     this.createLiveCard = function(){
         
     }
-    this.updateLiveCared = function(){
+    this.updateLiveCard = function(){
         //create new card based off information
     }
     this.display = function(req, res, next){
@@ -17,4 +17,4 @@ if(!gCreate){
     gCreate = new Create();
 }
 
-exports = gCreate;
+module.exports = gCreate;

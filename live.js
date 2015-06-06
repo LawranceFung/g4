@@ -1,10 +1,7 @@
 var Promise = require('promise');
 var request = require('request');
 
-var Live = function Live(){
-    
-    //returns promise
-    this.getPosts = function(live_card_id){
+function getPosts(live_card_id){
         
         var reqBody = {
             url:"http://api.globalhack4.test.lockerdome.com/app_fetch_content?",
@@ -16,22 +13,30 @@ var Live = function Live(){
             method:'GET'
         };
         
-        return new Promise(function(success, fail){
-            request(reqBody, function(error, response, body){
-                if(error){
-                    fail(error);
-                }else{
-                    success({response:response, body:body});
-                }
-            });    
-        });
+        return "hello";
+        
+        // return new Promise(function(success, fail){
+        //     request(reqBody, function(error, response, body){
+        //         if(error){
+        //             fail(error);
+        //         }else{
+        //             success({response:response, body:body});
+        //         }
+        //     });    
+        // });
         
     }
+
+var Live = function Live(){
+    
+    //returns promise
+    
     this.display = function(req, res, next){
-        
-        this.getPosts(42).then(function(data){
-            res.send(JSON.parse(data));
-        });
+    
+    res.send(getPosts(42));
+        // getPosts(42).then(function(data){
+        //     res.send(JSON.parse(data));
+        // });
         
     }
 }
@@ -42,4 +47,4 @@ if(!gLive){
     gLive = new Live();
 }
 
-exports = gLive;
+module.exports = gLive;
