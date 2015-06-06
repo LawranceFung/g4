@@ -1,14 +1,23 @@
 # g4
 global hack 4
 
-tools for publishers
-- right now can just promote and get feedback
+problem for publishers
+- have to refresh tc page for new content
+- embeddin rn not useful new updates regarding same event not connected to prev card
 
-make native content - new content page - separate heroku instance
-- TODO: brainstorm: user interaction for publisher benefit
+new card
+- get input
+- post input
+- make card id
+- make embed link
 
-access content in single page - TODO: strip away other stuff, make full screen
-$(".top-toolbar-cntnr").remove()
+update card
+- parse id from url
+- get input
+- update input for card
 
-embed link in external site
-TODO make pretty; include styles
+single page
+- parse id
+
+nice to have
+delete card
