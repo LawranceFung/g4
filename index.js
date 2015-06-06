@@ -6,11 +6,14 @@ var path = require("path");
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/index.html'));
+app.use('/public', express.static('public'));
+app.use('/node_modules', express.static('node_modules'));
+app.use('/js', express.static('js'));
+app.use('/css', express.static('css'));
 
-    // res.sendFile('index.html');
-    // res.render('index', { title: 'My Site' });
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.listen(app.get('port'), function() {

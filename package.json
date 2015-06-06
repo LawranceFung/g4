@@ -11,7 +11,8 @@
         "express": "~4.9.x",
         "jade": "^1.10.0",
         "pg": "4.x",
-        "materialize-css": "0.96.1"
+        "materialize-css": "0.96.1",
+        "underscore": "^1.7.0"
     },
     "engines": {
         "node": "0.12.2"
