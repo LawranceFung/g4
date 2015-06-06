@@ -4,6 +4,11 @@ var pg = require('pg');
 var request = require('request');
 var bodyParser = require('body-parser');
 var multer = require('multer');
+var create = require('./create.js');
+var live = require("./live.js");
+
+
+
 
 app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json()); // for parsing application/json
@@ -21,6 +26,9 @@ function log(msg) {
 var APP_ID = 7740523506827330;
 var APP_SECRET = "l6l8QHRBUVJyn+1NqjZq7p4uERt+gTc17a7KA6fIV/tNwfTjxkrGTfc3np909WnDCwoQ4Y4p90Q69vWRcOv2fg==";
 
+global.APP_ID = APP_ID;
+global.APP_SECRET = APP_SECRET;
+
 app.get('/', function(req, res){
     request('http://api.globalhack4.test.lockerdome.com/app_create_content?{"app_id":7740523506827330,"app_secret":"l6l8QHRBUVJyn+1NqjZq7p4uERt+gTc17a7KA6fIV/tNwfTjxkrGTfc3np909WnDCwoQ4Y4p90Q69vWRcOv2fg==","app_data":{"fun":"times"},"name":"Some App Content","text":"Short description of your content"}', function (error, response, body) {
         if (!error && res.statusCode == 200) {
@@ -29,6 +37,10 @@ app.get('/', function(req, res){
     });
     res.sendFile(__dirname + '/index.html');
 });
+
+
+app.get('/live', live.display());
+app.get('/create', create.display());
 
 app.listen(app.get('port'), function() {
     console.log("Node app is running on port:" + app.get('port'))
