@@ -18,27 +18,20 @@
 	<div class="container center-align">
 
 		<h1 class="animated fadeInDownBig">New topic</h1>
+
 		<!--enter topic title-->
 		<div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Topic name</label>
-        </div>
-        
-		<!--populate select dropdown with topics-->
-		<div class="input-field col s6">
-			<select>
-				<option value="1">Topic 1</option>
-				<option value="2">Topic 2</option>
-				<option value="3">Topic 3</option>
-			</select>
+			<input id="last_name" type="text" class="validate">
+			<label for="last_name">Topic name</label>
+
 		</div>
+		<div class="input-field col s6">
+			<textarea id="textarea1" class="materialize-textarea"></textarea>
+			<label for="textarea1">Add Card Snippet</label>
+		</div>
+		<a class="waves-effect waves-light btn-large">Save Snippet</a>
 	</div>
 
-	<script>
-		$(document).ready(function() {
-			$('select').material_select();
-		});
-	</script>
 </body>
 
 </html>
