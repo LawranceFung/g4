@@ -11,10 +11,14 @@ new card
 - make card id
 - make embed link
 
-update card
-- parse id from url
-- get input
-- update input for card
+new topic
+- input title
+- choose topic (FETCH)
+
+update old topic
+- FETCH locker id
+- render every card
+- POST cards back as one card update
 
 single page
 - parse id
