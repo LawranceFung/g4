@@ -2,12 +2,15 @@ var express = require('express');
 var app = express();
 var cool = require('cool-ascii-faces');
 var pg = require('pg');
-app.set('view engine', 'jade');
+var path = require("path");
 
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(req, res){
-    res.render('index', { title: 'My Site' });
+    res.sendFile(path.join(__dirname+'/index.html'));
+
+    // res.sendFile('index.html');
+    // res.render('index', { title: 'My Site' });
 });
 
 app.listen(app.get('port'), function() {
