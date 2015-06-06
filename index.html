@@ -1,37 +1,44 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>page</title>
 	<link rel="stylesheet" href="node_modules/materialize-css/bin/materialize.css">
 	<link rel="stylesheet" href="css/animate.css">
 </head>
+
 <body>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/underscore/underscore-min.js"></script>
 	<script src="node_modules/materialize-css/bin/materialize.js"></script>
-	<h1 class="animated infinite bounce">Example</h1>
-	
-	<div class="row">
 
+
+	<div class="container center-align">
+
+		<h1 class="animated fadeInDownBig">New topic</h1>
+		<!--enter topic title-->
 		<div class="input-field col s6">
-			<input value="Alvin" id="first_name2" type="text" class="validate">
-			<label class="active" for="first_name2">First Name</label>
-		</div>
-
-		<div class="row">
-			<form class="col s12">
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea id="textarea1" class="materialize-textarea"></textarea>
-						<label for="textarea1">Textarea</label>
-					</div>
-				</div>
-			</form>
-			<a class="submit-post waves-effect waves-light btn">Submit post</a>
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Topic name</label>
+        </div>
+        
+		<!--populate select dropdown with topics-->
+		<div class="input-field col s6">
+			<select>
+				<option value="1">Topic 1</option>
+				<option value="2">Topic 2</option>
+				<option value="3">Topic 3</option>
+			</select>
 		</div>
 	</div>
 
+	<script>
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+	</script>
 </body>
+
 </html>
